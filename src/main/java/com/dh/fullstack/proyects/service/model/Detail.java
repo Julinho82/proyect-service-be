@@ -17,6 +17,10 @@ public class Detail {
     @Column(name = "total_price", nullable = false)
     private  Long totalPrice;
 
+    @ManyToOne(fetch = FetchType.LAZY,optional = false)
+    @JoinColumn(name = "detailsale",referencedColumnName = "saleid")
+    private Sale sale;
+
     public Long getId() {
         return id;
     }
@@ -39,5 +43,13 @@ public class Detail {
 
     public void setTotalPrice(Long totalPrice) {
         this.totalPrice = totalPrice;
+    }
+
+    public Sale getSale() {
+        return sale;
+    }
+
+    public void setSale(Sale sale) {
+        this.sale = sale;
     }
 }

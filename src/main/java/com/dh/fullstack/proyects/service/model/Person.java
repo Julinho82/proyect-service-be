@@ -6,7 +6,7 @@ import javax.persistence.*;
 import java.util.Date;
 
 @Entity
-@Table(name = "user_table")
+@Table(name = "person_table")
 @Inheritance(strategy = InheritanceType.JOINED)
 public abstract class Person {
 
